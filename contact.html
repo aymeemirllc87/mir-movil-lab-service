@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Request a mobile phlebotomy appointment with Mir Movil Lab Service anywhere in Miami-Dade or Broward County.">
+  <title>Mir Movil Lab Service &ndash; Contact &amp; Appointment Request</title>
+  <link rel="icon" href="images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo-link" href="index.html">
+        <img src="images/logo.svg" alt="Mir Movil Lab Service official logo: a white medical cross and blood drop inside a teal badge" width="200" height="40">
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html" class="is-current" aria-current="page">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-intro">
+      <h1>Book an appointment or get in touch</h1>
+      <p class="lead">Fill out the form below to schedule a mobile phlebotomy visit or ask a question about our services. We answer every request within one business day.</p>
+    </section>
+
+    <div class="contact-layout">
+
+      <section class="panel form-panel" aria-labelledby="form-heading">
+        <h2 id="form-heading">Appointment request</h2>
+
+        <p class="result" id="restore-notice" role="status" aria-live="polite" hidden></p>
+
+        <form id="appointment-form" action="#" method="post" novalidate>
+          <fieldset>
+            <legend>Patient and appointment details</legend>
+
+            <div class="field">
+              <label for="full-name">Full name</label>
+              <input type="text" id="full-name" name="full_name" autocomplete="name"
+                     placeholder="Jane Doe" required aria-describedby="err-full-name">
+              <span class="error-msg" id="err-full-name" role="alert"></span>
+            </div>
+
+            <div class="field">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" autocomplete="email"
+                     placeholder="jane@example.com" required aria-describedby="err-email">
+              <span class="error-msg" id="err-email" role="alert"></span>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone number</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel"
+                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="305-555-0199"
+                     required aria-describedby="err-phone hint-phone">
+              <span class="hint" id="hint-phone">Format: 305-555-0199</span>
+              <span class="error-msg" id="err-phone" role="alert"></span>
+            </div>
+
+            <div class="field">
+              <label for="zip">Service address ZIP code</label>
+              <input type="text" id="zip" name="zip" inputmode="numeric" maxlength="5"
+                     autocomplete="postal-code" placeholder="33131" required aria-describedby="err-zip">
+              <span class="error-msg" id="err-zip" role="alert"></span>
+            </div>
+
+            <div class="field">
+              <label for="service-type">Required service</label>
+              <select id="service-type" name="service_type" required aria-describedby="err-service-type">
+                <option value="">-- Please select a service --</option>
+                <option value="routine-blood">Routine blood draw</option>
+                <option value="specialty">Specialty lab panel</option>
+                <option value="stat">STAT / urgent collection</option>
+                <option value="geriatric">Homebound and geriatric visit</option>
+                <option value="pediatric">Pediatric collection</option>
+                <option value="wellness">Corporate wellness event</option>
+              </select>
+              <span class="error-msg" id="err-service-type" role="alert"></span>
+            </div>
+
+            <div class="field">
+              <label for="preferred-date">Preferred appointment date</label>
+              <input type="date" id="preferred-date" name="preferred_date" required aria-describedby="err-preferred-date">
+              <span class="error-msg" id="err-preferred-date" role="alert"></span>
+            </div>
+
+            <div class="field">
+              <label for="notes">Additional notes or doctor's orders</label>
+              <textarea id="notes" name="notes" rows="4"
+                        placeholder="Fasting draw, difficult veins, gate code, physician name..."></textarea>
+            </div>
+          </fieldset>
+
+          <p class="form-actions">
+            <button type="submit" class="btn btn-primary">Submit request</button>
+          </p>
+
+          <p class="result" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <aside class="panel-plain contact-aside" aria-labelledby="reach-heading">
+        <h2 id="reach-heading">Reach us directly</h2>
+        <dl class="contact-details">
+          <dt>Phone</dt>
+          <dd><a href="tel:+13055550142">(305) 555-0142</a></dd>
+          <dt>Email</dt>
+          <dd><a href="mailto:appointments@mirmovillab.com">appointments@mirmovillab.com</a></dd>
+          <dt>Service area</dt>
+          <dd>Miami-Dade and Broward County, Florida</dd>
+          <dt>Hours</dt>
+          <dd>Monday to Friday, 6:00 AM &ndash; 8:00 PM<br>
+              Saturday, 7:00 AM &ndash; 3:00 PM<br>
+              Sunday by request</dd>
+        </dl>
+        <p class="small-print">If this is a medical emergency, call 911. Mir Movil Lab Service does not provide emergency care.</p>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Mir Movil Lab Service</p>
+      <p>Serving Miami-Dade and Broward County, Florida<br>
+         (305) 555-0142 &middot; appointments@mirmovillab.com</p>
+      <p class="footer-legal">&copy; 2026 Mir Movil Lab Service. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

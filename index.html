@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mir Movil Lab Service brings licensed mobile phlebotomy and laboratory specimen collection to homes and offices across Miami-Dade and Broward.">
+  <title>Mir Movil Lab Service &ndash; Mobile Phlebotomy in Miami</title>
+  <link rel="icon" href="images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo-link" href="index.html">
+        <img src="images/logo.svg" alt="Mir Movil Lab Service official logo: a white medical cross and blood drop inside a teal badge" width="200" height="40">
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="is-current" aria-current="page">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Mobile lab and phlebotomy services at your doorstep</h1>
+        <p class="lead">Mir Movil Lab Service brings licensed phlebotomists to your home, office or care facility across Miami. No waiting rooms, no parking, no lost morning.</p>
+        <p class="hero-actions">
+          <a class="btn btn-primary" href="contact.html">Book an appointment</a>
+          <a class="btn btn-ghost" href="services.html">See our services</a>
+        </p>
+      </div>
+      <picture class="hero-media">
+        <source media="(min-width: 1024px)" srcset="images/hero-desktop.jpg">
+        <source media="(min-width: 600px)" srcset="images/hero-tablet.jpg">
+        <img src="images/hero-mobile.jpg" alt="Illustration of a Mir Movil Lab Service mobile collection van travelling to a patient's house" width="800" height="600">
+      </picture>
+    </section>
+
+    <section class="panel" aria-labelledby="coverage-heading">
+      <h2 id="coverage-heading">Check if we come to your area</h2>
+      <p>Enter your five digit ZIP code and we will tell you which service zone you fall into, what the travel fee is, and how soon a phlebotomist can reach you.</p>
+
+      <form class="coverage-form" id="coverage-form" novalidate>
+        <label for="zip-input">ZIP code</label>
+        <div class="coverage-row">
+          <input type="text" id="zip-input" name="zip" inputmode="numeric" maxlength="5"
+                 placeholder="33131" autocomplete="postal-code" aria-describedby="coverage-result">
+          <button type="submit" class="btn btn-primary">Check coverage</button>
+        </div>
+      </form>
+
+      <p class="result" id="coverage-result" role="status" aria-live="polite">
+        Enter a ZIP code above to see your zone.
+      </p>
+    </section>
+
+    <section class="panel-plain" aria-labelledby="why-heading">
+      <h2 id="why-heading">Why choose Mir Movil Lab Service?</h2>
+      <p>Our certified phlebotomists prioritise your comfort, privacy and health. Every specimen is collected, labelled and transported under the same standards a hospital laboratory follows.</p>
+      <ul class="feature-list">
+        <li>
+          <h3>Certified and experienced</h3>
+          <p>Florida licensed phlebotomists trained in geriatric, pediatric and difficult draws.</p>
+        </li>
+        <li>
+          <h3>Flexible scheduling</h3>
+          <p>Early morning and evening appointments, including fasting draws before breakfast.</p>
+        </li>
+        <li>
+          <h3>Direct doctor coordination</h3>
+          <p>We pick up your physician's orders and return results straight to their office.</p>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Mir Movil Lab Service</p>
+      <p>Serving Miami-Dade and Broward County, Florida<br>
+         (305) 555-0142 &middot; appointments@mirmovillab.com</p>
+      <p class="footer-legal">&copy; 2026 Mir Movil Lab Service. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

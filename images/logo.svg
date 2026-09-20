@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" role="img" aria-label="Mir Movil Lab Service">
+  <rect x="2" y="6" width="52" height="52" rx="16" fill="#0F6E62"/>
+  <rect x="24.5" y="17" width="7" height="30" rx="3" fill="#FFFFFF"/>
+  <rect x="13" y="28.5" width="30" height="7" rx="3" fill="#FFFFFF"/>
+  <circle cx="45" cy="49" r="8" fill="#E4F1EE"/>
+  <path d="M45 43.5c2.6 2.6 4 4.4 4 6a4 4 0 1 1-8 0c0-1.6 1.4-3.4 4-6z" fill="#0F6E62"/>
+  <text x="68" y="31" font-family="Poppins, Segoe UI, Arial, sans-serif" font-size="21" font-weight="600" fill="#0F6E62">Mir Movil</text>
+  <text x="68" y="50" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" fill="#22312E" letter-spacing="1.8">LAB SERVICE</text>
+</svg>

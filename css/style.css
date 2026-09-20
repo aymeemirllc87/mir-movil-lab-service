@@ -1,0 +1,603 @@
+/* ==========================================================================
+   Mir Movil Lab Service - style.css
+   Written mobile first. The base rules below are the phone layout; the two
+   media queries at the bottom (720px and 1080px) add the wider layouts.
+
+   PALETTE (4 colours)
+     --brand        #0F6E62  deep teal   - header accent, footer, buttons
+     --brand-tint   #E4F1EE  pale teal   - secondary panels and cards
+     --ink          #22312E  charcoal    - body text
+     --white        #FFFFFF              - page background
+
+   Red (--error) is deliberately outside the palette and is used for one
+   thing only: form validation errors.
+
+   TYPOGRAPHY (2 families)
+     Poppins - headings, navigation, buttons
+     Inter   - body copy, labels, form controls
+   ========================================================================== */
+
+:root {
+  --brand: #0F6E62;
+  --brand-dark: #09443C;
+  --brand-tint: #E4F1EE;
+  --ink: #22312E;
+  --white: #FFFFFF;
+  --error: #C0392B;
+
+  --font-head: "Poppins", "Segoe UI", Arial, sans-serif;
+  --font-body: "Inter", "Segoe UI", Arial, sans-serif;
+
+  --radius: 12px;
+  --shadow: 0 2px 10px rgba(34, 49, 46, 0.08);
+  --wrap: 1180px;
+}
+
+/* --------------------------------------------------------------- reset -- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background-color: var(--white);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-head);
+  line-height: 1.25;
+  color: var(--brand-dark);
+  margin: 0 0 0.6em;
+}
+
+h1 { font-size: 1.75rem; font-weight: 700; }
+h2 { font-size: 1.4rem;  font-weight: 600; }
+h3 { font-size: 1.1rem;  font-weight: 600; }
+
+p { margin: 0 0 1em; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--brand); }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.lead { font-size: 1.05rem; }
+.small-print { font-size: 0.85rem; opacity: 0.8; }
+
+/* Visible only when tabbed to - lets keyboard users jump past the nav. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  background: var(--brand-dark);
+  color: var(--white);
+  padding: 0.6rem 1rem;
+  z-index: 10;
+}
+
+.skip-link:focus { left: 0.5rem; top: 0.5rem; }
+
+/* -------------------------------------------------------------- header -- */
+.site-header {
+  background-color: var(--white);
+  border-bottom: 3px solid var(--brand);
+}
+
+.header-inner {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;   /* phone: logo above nav */
+  gap: 0.75rem;
+}
+
+.logo-link { align-self: flex-start; }
+.logo-link img { width: 200px; height: auto; }
+
+/* Phone navigation: each link is a full width block so the tap target is
+   large and two links can never sit close enough to be mis-tapped. */
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.nav-list a {
+  display: block;
+  font-family: var(--font-head);
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--brand-dark);
+  background-color: var(--brand-tint);
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius);
+}
+
+.nav-list a:hover {
+  background-color: var(--brand);
+  color: var(--white);
+}
+
+.nav-list a.is-current {
+  background-color: var(--brand);
+  color: var(--white);
+}
+
+/* ---------------------------------------------------------------- main -- */
+main {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+section { margin-bottom: 2rem; }
+
+.page-intro { margin-bottom: 1.5rem; }
+
+/* ---------------------------------------------------------------- hero -- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-media img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+/* ------------------------------------------------------------- buttons -- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.7rem 1.3rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--brand);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--brand);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-dark);
+  border-color: var(--brand-dark);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--brand);
+}
+
+.btn-ghost:hover { background-color: var(--brand-tint); }
+
+/* -------------------------------------------------------------- panels -- */
+.panel {
+  background-color: var(--brand-tint);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+.panel-plain { padding: 0; }
+
+/* ------------------------------------------------------ coverage check -- */
+.coverage-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.coverage-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.coverage-row input {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.7rem 0.9rem;
+  border: 2px solid var(--brand);
+  border-radius: var(--radius);
+  background-color: var(--white);
+  color: var(--ink);
+}
+
+/* Live region used by the coverage checker, the quote box and the form. */
+.result {
+  margin: 1rem 0 0;
+  padding: 0.8rem 1rem;
+  background-color: var(--white);
+  border-left: 5px solid var(--brand);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.95rem;
+}
+
+.result.is-negative { border-left-color: var(--error); }
+.result strong { color: var(--brand-dark); }
+
+/* ------------------------------------------------------- feature lists -- */
+.feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.feature-list li {
+  background-color: var(--white);
+  border: 1px solid var(--brand-tint);
+  border-top: 4px solid var(--brand);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+.feature-list h3 { margin-bottom: 0.3rem; }
+.feature-list p  { margin: 0; }
+
+/* -------------------------------------------------------------- figure -- */
+.figure {
+  margin: 1.25rem 0 0;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  box-shadow: var(--shadow);
+}
+
+.figure img { border-radius: 8px; }
+
+/* Keeps the notice above the fieldset from crowding the legend. */
+#restore-notice { margin-bottom: 1.25rem; }
+
+.figure figcaption {
+  font-style: italic;      /* the only italic text on the site */
+  font-size: 0.9rem;
+  padding: 0.7rem 0.3rem 0.2rem;
+}
+
+/* ------------------------------------------------------- service cards -- */
+.service-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* flex: 0 1 (not 1 1) so a lone card on the last row keeps the same width
+   as the cards above it instead of stretching across the whole row. */
+.service-card {
+  flex: 0 1 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  border: 2px solid var(--brand-tint);
+  border-radius: var(--radius);
+  padding: 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+.service-card.is-selected {
+  border-color: var(--brand);
+  background-color: var(--brand-tint);
+}
+
+.service-tag {
+  font-family: var(--font-head);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand);
+  background-color: var(--brand-tint);
+  align-self: flex-start;
+  padding: 0.15rem 0.6rem;
+  border-radius: 99px;
+  margin: 0 0 0.6rem;
+}
+
+.service-card.is-selected .service-tag { background-color: var(--white); }
+
+.service-desc { flex-grow: 1; }
+
+.service-meta {
+  font-size: 0.95rem;
+  margin-bottom: 0.9rem;
+}
+
+.service-meta .price {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--brand-dark);
+}
+
+.service-meta .dot { opacity: 0.5; margin: 0 0.25rem; }
+
+.service-toggle { width: 100%; }
+
+/* ----------------------------------------------------------- quote box -- */
+.quote-box {
+  background-color: var(--brand-tint);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+.quote-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.quote-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(15, 110, 98, 0.25);
+}
+
+.quote-list .qty {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.quote-total {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--brand-dark);
+  margin: 0.9rem 0 0;
+}
+
+.quote-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1rem 0 0.5rem;
+}
+
+/* --------------------------------------------------------------- split -- */
+.split {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.split-media {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* ---------------------------------------------------------- transcript -- */
+.transcript {
+  margin-top: 1rem;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+}
+
+.transcript summary {
+  font-family: var(--font-head);
+  font-weight: 600;
+  color: var(--brand-dark);
+  cursor: pointer;
+}
+
+.transcript p {
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+}
+
+audio {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------------------------------------------------------------- form -- */
+.contact-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+fieldset {
+  border: 2px solid var(--brand-tint);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin: 0 0 1rem;
+}
+
+legend {
+  font-family: var(--font-head);
+  font-weight: 600;
+  color: var(--brand-dark);
+  padding: 0 0.4rem;
+}
+
+.field { margin-bottom: 1rem; }
+
+.field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink);
+  background-color: var(--white);
+  padding: 0.65rem 0.8rem;
+  border: 2px solid var(--brand);
+  border-radius: var(--radius);
+}
+
+.field textarea { resize: vertical; }
+
+.hint {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-top: 0.25rem;
+}
+
+/* Error styling - the only place red appears on the site. */
+.field.has-error input,
+.field.has-error select { border-color: var(--error); }
+
+.error-msg {
+  display: none;
+  color: var(--error);
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-top: 0.3rem;
+}
+
+.field.has-error .error-msg { display: block; }
+
+.contact-details { margin: 0; }
+
+.contact-details dt {
+  font-family: var(--font-head);
+  font-weight: 600;
+  color: var(--brand-dark);
+  margin-top: 0.8rem;
+}
+
+.contact-details dd { margin: 0.15rem 0 0; }
+
+/* -------------------------------------------------------------- footer -- */
+.site-footer {
+  background-color: var(--brand-dark);
+  color: var(--brand-tint);
+  padding: 1.75rem 1rem;
+}
+
+.footer-inner {
+  max-width: var(--wrap);
+  margin: 0 auto;
+}
+
+.footer-brand {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--white);
+  margin-bottom: 0.4rem;
+}
+
+.footer-legal {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin: 1rem 0 0;
+}
+
+/* ==========================================================================
+   BREAKPOINT 1 - 720px and up (large phone landscape / tablet)
+   The navigation collapses into one horizontal row and the cards pair up.
+   ========================================================================== */
+@media (min-width: 720px) {
+
+  h1 { font-size: 2.15rem; }
+  h2 { font-size: 1.6rem; }
+
+  .header-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    gap: 0.4rem;
+  }
+
+  .nav-list a {
+    background-color: transparent;
+    padding: 0.5rem 0.85rem;
+  }
+
+  .coverage-row { flex-direction: row; }
+  .coverage-row input { flex: 1 1 auto; }
+  .coverage-row .btn { flex: 0 0 auto; }
+
+  .feature-list { flex-direction: row; }
+  .feature-list li { flex: 0 1 calc((100% - 2rem) / 3); }
+
+  /* Stops the figure from dominating the page on a wide screen. */
+  .figure { max-width: 620px; margin-left: auto; margin-right: auto; }
+
+  .service-card { flex-basis: calc((100% - 1rem) / 2); }
+
+  .split { flex-direction: row; align-items: center; }
+  .split-text  { flex: 1 1 55%; }
+  .split-media { flex: 1 1 45%; }
+
+  main { padding: 2rem 1.5rem 3.5rem; }
+  .panel, .quote-box { padding: 1.5rem; }
+}
+
+/* ==========================================================================
+   BREAKPOINT 2 - 1080px and up (desktop)
+   Three service cards per row; the hero and the contact page split in two.
+   ========================================================================== */
+@media (min-width: 1080px) {
+
+  h1 { font-size: 2.5rem; }
+
+  .hero {
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .hero-text  { flex: 1 1 46%; }
+  .hero-media { flex: 1 1 54%; }
+
+  .service-card { flex-basis: calc((100% - 2rem) / 3); }
+
+  .contact-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .form-panel    { flex: 1 1 62%; }
+  .contact-aside { flex: 1 1 38%; }
+
+  main { padding: 2.5rem 1.5rem 4rem; }
+}

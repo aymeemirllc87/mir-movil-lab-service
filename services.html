@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Routine blood draws, specialty panels, STAT collections, homebound visits, pediatric draws and corporate wellness events, delivered at your address in Miami.">
+  <title>Mir Movil Lab Service &ndash; Services</title>
+  <link rel="icon" href="images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo-link" href="index.html">
+        <img src="images/logo.svg" alt="Mir Movil Lab Service official logo: a white medical cross and blood drop inside a teal badge" width="200" height="40">
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html" class="is-current" aria-current="page">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-intro">
+      <h1>Our mobile testing services</h1>
+      <p class="lead">Every service below is performed at your home, workplace or care facility. Select the ones you need and we will carry your choices straight to the appointment form.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="specimen-heading">
+      <h2 id="specimen-heading">Routine and specialty blood draws</h2>
+      <p>We collect the samples your physician ordered, from cholesterol checks and glucose monitoring to full lipid panels and specialty diagnostic testing. Samples travel in temperature controlled, barcoded tubes and reach the processing laboratory the same day.</p>
+      <figure class="figure">
+        <img src="images/specimen-collection.jpg" alt="Four labelled blood specimen tubes with colour coded caps standing in a teal collection rack" width="1200" height="800">
+        <figcaption>Figure 1: Standardised, temperature controlled specimen tubes. The cap colour identifies the additive required for each panel, which is what keeps results accurate after transport.</figcaption>
+      </figure>
+    </section>
+
+    <section class="panel-plain" aria-labelledby="catalog-heading">
+      <h2 id="catalog-heading">Choose the services you need</h2>
+      <p>Tap <strong>Add to my request</strong> on any service. Your selection is saved in this browser, so it is still here if you close the page and come back.</p>
+
+      <div class="service-grid" id="service-grid">
+        <!-- Static content: works with or without JavaScript. -->
+        <article class="service-card" data-service-id="routine-blood">
+          <p class="service-tag">Routine</p>
+          <h3>Routine blood draw</h3>
+          <p class="service-desc">Standard venipuncture for physician ordered panels: CBC, metabolic panel, lipids, glucose and A1C.</p>
+          <p class="service-meta"><span class="price">$45</span> <span class="dot">&middot;</span> about 20 minutes</p>
+        </article>
+
+        <article class="service-card" data-service-id="specialty">
+          <p class="service-tag">Specialty</p>
+          <h3>Specialty lab panel</h3>
+          <p class="service-desc">Hormone, allergy, autoimmune and other multi tube panels that need specific handling and chilled transport.</p>
+          <p class="service-meta"><span class="price">$85</span> <span class="dot">&middot;</span> about 30 minutes</p>
+        </article>
+
+        <article class="service-card" data-service-id="stat">
+          <p class="service-tag">Urgent</p>
+          <h3>STAT / urgent collection</h3>
+          <p class="service-desc">Priority dispatch when your physician needs results the same day. A phlebotomist is assigned within the hour.</p>
+          <p class="service-meta"><span class="price">$120</span> <span class="dot">&middot;</span> about 45 minutes</p>
+        </article>
+
+        <article class="service-card" data-service-id="geriatric">
+          <p class="service-tag">In home care</p>
+          <h3>Homebound and geriatric visit</h3>
+          <p class="service-desc">Unhurried, gentle collection for elderly or mobility impaired patients, including fragile vein technique.</p>
+          <p class="service-meta"><span class="price">$65</span> <span class="dot">&middot;</span> about 35 minutes</p>
+        </article>
+
+        <article class="service-card" data-service-id="pediatric">
+          <p class="service-tag">In home care</p>
+          <h3>Pediatric collection</h3>
+          <p class="service-desc">Butterfly and micro collection technique for children, done at home where the child is calmest.</p>
+          <p class="service-meta"><span class="price">$70</span> <span class="dot">&middot;</span> about 30 minutes</p>
+        </article>
+
+        <article class="service-card" data-service-id="wellness">
+          <p class="service-tag">Corporate</p>
+          <h3>Corporate wellness event</h3>
+          <p class="service-desc">On site screening day for your staff: blood pressure, glucose, cholesterol and a summary report per employee.</p>
+          <p class="service-meta"><span class="price">$350</span> <span class="dot">&middot;</span> about 3 hours, up to 20 staff</p>
+        </article>
+      </div>
+
+      <aside class="quote-box" id="quote-box" aria-labelledby="quote-heading">
+        <h3 id="quote-heading">My request</h3>
+        <p class="result" id="quote-summary" role="status" aria-live="polite">
+          No services selected yet.
+        </p>
+        <ul class="quote-list" id="quote-list"></ul>
+        <p class="quote-total" id="quote-total" hidden></p>
+        <p class="quote-actions">
+          <a class="btn btn-primary" href="contact.html">Continue to booking</a>
+          <button type="button" class="btn btn-ghost" id="quote-clear">Clear selection</button>
+        </p>
+        <p class="small-print">Prices are estimates for a single visit and do not include the laboratory processing fee billed by your insurer.</p>
+      </aside>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Mir Movil Lab Service</p>
+      <p>Serving Miami-Dade and Broward County, Florida<br>
+         (305) 555-0142 &middot; appointments@mirmovillab.com</p>
+      <p class="footer-legal">&copy; 2026 Mir Movil Lab Service. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
