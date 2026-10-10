@@ -396,6 +396,7 @@ section { margin-bottom: 2rem; }
 
 .split-media {
   width: 100%;
+  height: auto;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
@@ -565,8 +566,9 @@ legend {
   .service-card { flex-basis: calc((100% - 1rem) / 2); }
 
   .split { flex-direction: row; align-items: center; }
-  .split-text  { flex: 1 1 55%; }
-  .split-media { flex: 1 1 45%; }
+  /* min-width: 0 lets the 1200px image shrink instead of squeezing the text. */
+  .split-text  { flex: 1 1 55%; min-width: 0; }
+  .split-media { flex: 1 1 45%; min-width: 0; }
 
   main { padding: 2rem 1.5rem 3.5rem; }
   .panel, .quote-box { padding: 1.5rem; }
